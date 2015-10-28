@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EvenNumbers.cs" />
+    <Compile Include="FibonacciNumbers.cs" />
     <Compile Include="NaturalNumbers.cs" />
+    <Compile Include="OddNumbers.cs" />
+    <Compile Include="PrimeNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
