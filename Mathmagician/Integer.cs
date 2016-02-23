@@ -10,6 +10,8 @@ namespace Mathmagician
     {
 
         public int Max { get; private set; }
+        protected int Step { get; set; }
+        protected int First { get; set; }
 
         /*
         Using properties is like:
@@ -26,16 +28,18 @@ namespace Mathmagician
         public Integer()
         {
             Max = 50;
+            Step = 1;
+            First = 0;
         }
 
-        public int GetFirst()
+        virtual public int GetFirst()
         {
-            return 0;
+            return First;
         }
 
-        public int GetNext(int current)
+        virtual public int GetNext(int current)
         {
-            return current + 1;
+            return current + Step;
         }
 
         public int[] GetSequence(int how_many)
