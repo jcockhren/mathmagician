@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Even.cs" />
+    <Compile Include="Fibonacci.cs" />
     <Compile Include="Integer.cs" />
     <Compile Include="Odd.cs" />
     <Compile Include="Program.cs" />
