@@ -42,7 +42,7 @@ namespace Mathmagician
             return current + Step;
         }
 
-        public int[] GetSequence(int how_many)
+        virtual public int[] GetSequence(int how_many)
         {
             if (how_many > Max)
             {
