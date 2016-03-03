@@ -54,5 +54,57 @@ namespace Mathmagician.Tests
             // Assert
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void PrimeIs33NotPrime()
+        {
+            // Arrange
+            Prime my_primes = new Prime();
+
+            // Act
+            bool actual = my_primes.IsPrime(33);
+
+            // Assert
+            Assert.IsFalse(actual);
+        }
+
+        [TestMethod]
+        public void PrimeIs2Prime()
+        {
+            // Arrange
+            Prime my_primes = new Prime();
+
+            // Act
+            bool actual = my_primes.IsPrime(2);
+
+            // Assert
+            Assert.IsTrue(actual);
+        }
+
+        [TestMethod]
+        public void PrimeIs37Prime()
+        {
+            // Arrange
+            Prime my_primes = new Prime();
+
+            // Act
+            bool actual = my_primes.IsPrime(37);
+
+            // Assert
+            Assert.IsTrue(actual);
+        }
+
+        [TestMethod]
+        public void Prime24IsNotPrime()
+        {
+            // Arrange
+            Prime my_primes = new Prime();
+
+            // Act
+            bool actual = my_primes.IsPrime(24);
+
+            // Assert
+            Assert.IsFalse(actual);
+        }
     }
 }
