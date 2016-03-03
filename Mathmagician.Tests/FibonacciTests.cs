@@ -62,7 +62,7 @@ namespace Mathmagician.Tests
             Fibonacci my_Fibonaccis = new Fibonacci();
 
             // Act
-            int actual = my_Fibonaccis.GetNth(10);
+            int actual = my_Fibonaccis.GetNthCached(10);
             int expected = 55;
 
             // Assert
