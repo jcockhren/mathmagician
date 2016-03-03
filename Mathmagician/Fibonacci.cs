@@ -8,14 +8,21 @@ namespace Mathmagician
 {
     public class Fibonacci : Integer
     {
-        private int[] elements; 
+        private int[] elements;
         public Fibonacci()
         {
             First = 1;
             elements = new int[Max];
-            for (int i = 0; i < Max; i++)
+
+            elements[0] = 1;
+            elements[1] = 1;
+            elements[2] = 2;
+            elements[3] = 3;
+            elements[4] = 5;
+
+            for (int n = 6; n < Max; n++)
             {
-                elements[i] = GetNth(i + 1);
+                elements[n - 1] = GetNthCached(n);
             }
         }
 
