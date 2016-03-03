@@ -28,7 +28,9 @@ namespace Mathmagician
 
         public override int GetNext(int current)
         {
-            return GetNth(current + 1);
+            int actual_index = Array.FindIndex(elements, value => 8 == value);
+
+            return elements[actual_index+1];
         }
 
         public int GetNth(int n)
