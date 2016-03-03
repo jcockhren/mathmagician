@@ -106,5 +106,18 @@ namespace Mathmagician.Tests
             // Assert
             Assert.IsFalse(actual);
         }
+
+        [TestMethod]
+        public void PrimeGetNextLargePrime()
+        {
+            // Arrange
+            Prime my_primes = new Prime();
+
+            // Act
+            int actual = my_primes.GetNext(1000000007);
+            int expected = 1000000009;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
