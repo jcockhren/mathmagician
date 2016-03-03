@@ -44,6 +44,40 @@ namespace Mathmagician
             }
         }
 
+        public int GetNthCached(int n)
+        {
+            if (n <= 0) { throw new Exception(); }
+
+            if (elements[n-1] != 0)
+            {
+                return elements[n-1];
+            } else
+            {
+
+                int first_term;
+                if (elements[n-2] == 0)
+                {
+                    first_term = GetNthCached(n - 1);
+                    elements[n - 2] = first_term;
+                } else
+                {
+                    first_term = elements[n-2];
+                }
+
+                int second_term;
+                if (elements[n - 3] == 0)
+                {
+                    second_term = GetNthCached(n - 2);
+                    elements[n - 3] = first_term;
+                }
+                else
+                {
+                    second_term = elements[n - 3];
+                }
+                return first_term + second_term;
+            }
+        }
+
         override public int[] GetSequence(int how_many)
         {
             if (how_many > Max)
