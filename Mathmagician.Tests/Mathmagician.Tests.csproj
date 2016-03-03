@@ -57,6 +57,7 @@
     <Compile Include="EvenTests.cs" />
     <Compile Include="OddTests.cs" />
     <Compile Include="FibonacciTests.cs" />
+    <Compile Include="PrimeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mathmagician\Mathmagician.csproj">
