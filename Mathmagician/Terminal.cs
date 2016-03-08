@@ -60,6 +60,11 @@ namespace Mathmagician
                 }
             }
 
+            if(NumberFamily == null)
+            {
+                return "Whoops!";
+            }
+            // Should create new instance or something
             return steps[Progress];
 
             // Requires knowing the classes we have available
@@ -78,9 +83,53 @@ namespace Mathmagician
             bool success = int.TryParse(user_input, out output);
             if (success)
             {
+                
                 Progress++;
-                return "Cool. I'm going to print _____ _____ numbers";
+                Count = output;
+                return String.Format("Cool. I'm going to print {0} {1} numbers", Count, NumberFamily);
             } else
+            {
+                return "Whoops!";
+            }
+        }
+
+        public Integer NumberFamilyFactory()
+        {
+            if (NumberFamily == "prime")
+            {
+                return new Prime();
+            } else if (NumberFamily == "fibonacci")
+            {
+                return new Fibonacci();
+
+            }
+            else if (NumberFamily == "odd")
+            {
+                return new Odd();
+            }
+            else if (NumberFamily == "integer")
+            {
+                return new Integer();
+
+            }
+            else if (NumberFamily == "even")
+            {
+                return new Even();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string PrintSequence()
+        {
+            try
+            {
+                int[] seq = NumberFamilyFactory().GetSequence(Count);
+                return String.Join(" ", seq);
+            }
+            catch (Exception)
             {
                 return "Whoops!";
             }
