@@ -15,7 +15,7 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
-        public void TerminalEnsureFindCorrectNumberFamily()
+        public void TerminalAskTheFirstQuestion()
         {
             // Arrange
             Terminal term = new Terminal();
@@ -56,6 +56,57 @@ namespace Mathmagician.Tests
             // Assert
             Assert.AreEqual(expected_output, actual_output);
             Assert.AreEqual(-1, term.Progress);
+        }
+
+        [TestMethod]
+        public void TerminalFirstQuestionGoodAnswer()
+        {
+            // Arrange
+            Terminal term = new Terminal();
+
+            // Act
+            string user_input = "even";
+            string actual_output = term.AcceptFirstAnswer(user_input);
+            string expected_output = "How many should I print?";
+
+            // Assert
+            Assert.AreEqual(expected_output, actual_output);
+            Assert.AreEqual(1, term.Progress);
+
+        }
+
+        [TestMethod]
+        public void TerminalSecondQuestionBadAnswer()
+        {
+            // Arrange
+            Terminal term = new Terminal();
+
+            // Act
+            string user_input = "1 hundred";
+            string actual_output = term.AcceptSecondAnswer(user_input);
+            string expected_output = "Whoops!";
+
+            // Assert
+            Assert.AreEqual(expected_output, actual_output);
+            Assert.AreEqual(1, term.Progress);
+
+        }
+
+        [TestMethod]
+        public void TerminalSecondQuestionGoodAnswer()
+        {
+            // Arrange
+            Terminal term = new Terminal();
+
+            // Act
+            string user_input = "10";
+            string actual_output = term.AcceptSecondAnswer(user_input);
+            string expected_output = "Cool";
+
+            // Assert
+            Assert.IsTrue(actual_output.StartsWith(expected_output));
+            Assert.AreEqual(2, term.Progress);
+
         }
 
         [TestMethod]
